@@ -5,6 +5,7 @@ import tseslint from "typescript-eslint";
 // does NOT extend "next/core-web-vitals" (that ruleset assumes a Next.js
 // project). Keep the ruleset here generic and framework-agnostic instead.
 export default tseslint.config(
+  { ignores: ["dist/**"] }, // never lint compiled build output
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {

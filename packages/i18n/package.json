@@ -1,0 +1,22 @@
+{
+  "name": "@zynkreatech/i18n",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "next-intl": "^3.19.0"
+  },
+  "peerDependencies": {
+    "react": "^19.2.0"
+  },
+  "devDependencies": {
+    "@zynkreatech/config": "workspace:*",
+    "tsup": "^8.0.0",
+    "typescript": "^5.5.0"
+  }
+}

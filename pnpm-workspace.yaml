@@ -1,0 +1,10 @@
+# Tells pnpm which folders are "workspace packages" it should link together
+# instead of downloading from the registry during local development.
+packages:
+  - "packages/*"
+  - "modules/modules-system/*"
+  - "modules/modules-custom/*"
+  - "modules/modules-shared/*"
+allowBuilds:
+  esbuild: true
+  sharp: false

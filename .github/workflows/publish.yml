@@ -14,13 +14,10 @@ jobs:
         with: { fetch-depth: 0 }   # full git history — Changesets needs it to diff versions
 
       - uses: pnpm/action-setup@v4
-        with: { version: 9 }
 
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          registry-url: https://npm.pkg.github.com
-          scope: "@zynkreatech"
 
       # Every step that touches the registry needs its OWN env: block —
       # steps do NOT inherit env vars from earlier steps.

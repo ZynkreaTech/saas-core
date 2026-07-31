@@ -4,7 +4,7 @@ import { defineConfig } from "tsup";
 // works whether the consuming app uses import/export or require().
 export default defineConfig({
   entry: {
-    index: "src/index.ts",
+    index: "src/index.tsx",
   },
   format: ["esm", "cjs"],
   dts: true,

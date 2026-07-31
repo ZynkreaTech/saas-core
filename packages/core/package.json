@@ -3,10 +3,27 @@
   "version": "1.0.0",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./providers/tenant-provider": {
+      "types": "./dist/providers/tenant-provider.d.ts",
+      "import": "./dist/providers/tenant-provider.mjs",
+      "require": "./dist/providers/tenant-provider.js"
+    },
+    "./providers/query-provider": {
+      "types": "./dist/providers/query-provider.d.ts",
+      "import": "./dist/providers/query-provider.mjs",
+      "require": "./dist/providers/query-provider.js"
+    }
+  },
   "files": ["dist"],
   "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs --dts",
-    "dev": "tsup src/index.ts --format esm,cjs --dts --watch",
+    "build": "tsup",
+    "dev": "tsup --watch",
     "lint": "eslint . --max-warnings 0",
     "typecheck": "tsc --noEmit"
   },
@@ -18,7 +35,7 @@
     "@hookform/resolvers": "^3.9.0"
   },
   "peerDependencies": {
-    "react": "19.2.4"
+    "react": "19.2.8"
   },
   "devDependencies": {
     "eslint": "^9.9.0",

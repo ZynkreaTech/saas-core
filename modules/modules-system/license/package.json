@@ -5,15 +5,15 @@
   "types": "./dist/index.d.ts",
   "files": ["dist"],
   "scripts": {
-    "build": "tsup src/index.ts --format esm --dts",
-    "dev": "tsup src/index.ts --format esm --dts --watch",
+    "build": "tsup",
+    "dev": "tsup --watch",
     "lint": "eslint . --max-warnings 0",
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
     "@zynkreatech/ui": "workspace:*",
     "@zynkreatech/core": "workspace:*",
-    "react": "19.2.4"
+    "react": "19.2.8"
   },
   "devDependencies": {
     "tsup": "^8.0.0",

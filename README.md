@@ -1,8 +1,8 @@
 # @zynkreatech / saas-core
 
-Shared building blocks for the Zynkrea SaaS platform: UI components, hooks/stores/providers, i18n, and **every module** (system + custom) — all published as versioned npm packages that `saas-web` and `saas-desktop` install as dependencies.
+Shared building blocks for the ZynFlex Platform: UI components, hooks/stores/providers, i18n, and **every module** (system + custom) — all published as versioned npm packages that `ZynFlex` and `saas-desktop` install as dependencies.
 
-> **This repo must be published successfully before `saas-web` or `saas-desktop` can install anything.** They resolve `@zynkreatech/*` packages from GitHub Packages, not from a local path.
+> **This repo must be published successfully before `ZynFlex` or `saas-desktop` can install anything.** They resolve `@zynkreatech/*` packages from GitHub Packages, not from a local path.
 
 ---
 
@@ -100,7 +100,7 @@ pnpm view @zynkreatech/ui --registry https://npm.pkg.github.com
 
 ---
 
-## Using this locally inside `saas-web` / `saas-desktop` (without publishing every time)
+## Using this locally inside `ZynFlex` / `saas-desktop` (without publishing every time)
 
 ```bash
 # inside saas-core
@@ -108,7 +108,7 @@ pnpm build
 cd packages/ui && pnpm link --global && cd ../..
 cd packages/core && pnpm link --global && cd ../..
 
-# inside saas-web (or saas-desktop)
+# inside ZynFlex (or saas-desktop)
 pnpm link --global @zynkreatech/ui
 pnpm link --global @zynkreatech/core
 
@@ -133,7 +133,7 @@ pnpm install --force
 1. Create the package under `modules/modules-system/<name>/` (always-on) or `modules/modules-custom/<name>/` (tenant-subscribable).
 2. Give it a `package.json` following the pattern in the existing modules — `@zynkreatech/ui` and `@zynkreatech/core` as `peerDependencies` (`workspace:*` while inside this repo).
 3. Run `pnpm changeset`, select the new package, push.
-4. Register it in `saas-web`'s module registry (`src/config/site.ts`) and add it as a dependency there.
+4. Register it in `ZynFlex`'s module registry (`src/config/site.ts`) and add it as a dependency there.
 
 Whether a module is "system" or "custom" is a **runtime** flag read by the consuming app's module registry — it is not encoded in this repo's `package.json` files.
 
@@ -141,15 +141,15 @@ Whether a module is "system" or "custom" is a **runtime** flag read by the consu
 
 ## Adding/updating ShadCN UI components
 
-ShadCN's CLI only runs inside a real Next.js app, so components are generated in `saas-web` first, verified, then promoted here:
+ShadCN's CLI only runs inside a real Next.js app, so components are generated in `ZynFlex` first, verified, then promoted here:
 
-1. `shadcn add <component>` inside `saas-web`.
+1. `shadcn add <component>` inside `ZynFlex`.
 2. Copy the generated file(s) into `packages/ui/src/components/ui/`.
 3. Regenerate the barrel export:
    ```bash
    ./scripts/generate-barrels.sh packages/ui/src/components/ui
    ```
-4. Remove the local copy from `saas-web` once promoted, so there's a single long-term home for shared components.
+4. Remove the local copy from `ZynFlex` once promoted, so there's a single long-term home for shared components.
 
 ---
 
@@ -171,7 +171,7 @@ ShadCN's CLI only runs inside a real Next.js app, so components are generated in
 | Symptom | Fix |
 |---|---|
 | `E401 Unauthorized` during `changeset publish` | `GH_PACKAGES_TOKEN` missing from that workflow step's own `env:` block, or the PAT is fine-grained/expired/not SSO-authorized |
-| `pnpm install` can't find `@zynkreatech/*` peer packages | Expected locally before first publish — install still succeeds, peers resolve once `saas-web`/`saas-desktop` install from the registry |
+| `pnpm install` can't find `@zynkreatech/*` peer packages | Expected locally before first publish — install still succeeds, peers resolve once `ZynFlex`/`saas-desktop` install from the registry |
 | `ERR_PNPM_LOCKFILE_CONFIG_MISMATCH` | Run a plain `pnpm install` (no `--frozen-lockfile`) and commit the regenerated lockfile |
 | `! [rejected] main -> main (fetch first)` on first push | Repo was auto-initialized with a README on GitHub — recreate it unchecked, or `git pull --allow-unrelated-histories` |
 | Barrel script produces an empty `index.ts` | Point it directly at the folder *containing* the components, not the parent folder |
@@ -180,7 +180,7 @@ ShadCN's CLI only runs inside a real Next.js app, so components are generated in
 
 ## Related repos
 
-- [`saas-web`](https://github.com/ZynkreaTech/saas-web) — the Next.js frontend, consumes these packages
+- [`ZynFlex`](https://github.com/ZynkreaTech/ZynFlex) — the Next.js frontend, consumes these packages
 - `saas-desktop` — Tauri desktop app, consumes `@zynkreatech/ui` / `@zynkreatech/core` (not yet scaffolded)
 
 ## Versioning

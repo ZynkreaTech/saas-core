@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "files": ["dist"],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -20,10 +21,9 @@
       "require": "./dist/providers/query-provider.js"
     }
   },
-  "files": ["dist"],
   "scripts": {
     "build": "tsup",
-    "dev": "tsup --watch",
+    "dev": "nodemon",
     "lint": "eslint . --max-warnings 0",
     "typecheck": "tsc --noEmit"
   },

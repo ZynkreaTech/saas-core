@@ -2,3 +2,4 @@
 export default function LicenseModule() {
   return <div>License module — placeholder UI</div>;
 }
+// test

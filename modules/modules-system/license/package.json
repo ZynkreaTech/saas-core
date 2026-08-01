@@ -6,7 +6,7 @@
   "files": ["dist"],
   "scripts": {
     "build": "tsup",
-    "dev": "tsup --watch",
+    "dev": "nodemon",
     "lint": "eslint . --max-warnings 0",
     "typecheck": "tsc --noEmit"
   },

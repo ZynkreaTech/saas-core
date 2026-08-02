@@ -1,0 +1,12 @@
+{
+  "technical_name": "crm",
+  "display_name": "CRM",
+  "version": "1.0.0",
+  "author": "Zynkreatech",
+  "description": "Customer Relationship Management",
+  "entry": "./dist/index.js",
+  "icon": "users",
+  "category": "business",
+  "dependencies": ["organization", "users"],
+  "minimum_platform": "1.0.0"
+}

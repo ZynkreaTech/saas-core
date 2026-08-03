@@ -330,6 +330,12 @@ importers:
       '@zynkreatech/config':
         specifier: workspace:*
         version: link:../config
+      '@zynkreatech/i18n':
+        specifier: workspace:*
+        version: link:../i18n
+      '@zynkreatech/ui':
+        specifier: workspace:*
+        version: 'link:'
       eslint:
         specifier: ^9.9.0
         version: 9.39.5(supports-color@7.2.0)

@@ -2,6 +2,10 @@ import type { ComponentType } from "react";
 
 export type ModuleId = string;
 
+export interface ModuleComponentProps {
+  ctx: ModuleContext; // required — every module page component receives ctx
+}
+
 export interface ModuleManifest {
   id: ModuleId;
   name: string;
@@ -13,9 +17,7 @@ export interface ModuleManifest {
   description?: string;
 }
 
-export interface ModuleRoute<
-  P extends Record<string, unknown> = Record<string, unknown>,
-> {
+export interface ModuleRoute {
   // Relative to the module's own URL segment. "" = the module's index page
   // (e.g. /billing), "[invoiceId]" = a nested dynamic segment
   // (e.g. /billing/123) — this is the mechanism that resolves the
@@ -27,7 +29,7 @@ export interface ModuleRoute<
   // to the actual component source, only a function that resolves it when
   // called, exactly like customModuleLoaders already works one level up
   // in ZynFlex's site.ts.
-  component: () => Promise<{ default: ComponentType<P> }>;
+  component: () => Promise<{ default: ComponentType<ModuleComponentProps> }>;
   exact?: boolean;
 }
 
@@ -98,7 +100,7 @@ export interface ModuleDefinitionInput extends ModuleLifecycleHooks {
    * boot() hook has registered a more specific route match. Keeps simple
    * modules (no sub-routes) usable without writing a boot() at all.
    */
-  component?: ComponentType<Record<string, unknown>>;
+  component?: ComponentType<ModuleComponentProps>;
 }
 
 export interface ModuleDefinition extends ModuleDefinitionInput {

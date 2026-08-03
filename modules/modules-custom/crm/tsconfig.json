@@ -3,7 +3,8 @@
   "compilerOptions": {
     "jsx": "react-jsx",
     "rootDir": "./src",
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "resolveJsonModule": true
   },
-  "include": ["src"]
+  "include": ["src", "manifest.json"]
 }

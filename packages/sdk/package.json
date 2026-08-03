@@ -1,0 +1,29 @@
+{
+  "name": "@zynkreatech/sdk",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup",
+    "dev": "nodemon",
+    "lint": "eslint . --max-warnings 0",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": "19.2.8"
+  },
+  "peerDependenciesMeta": {
+    "react": { "optional": true }
+  },
+  "devDependencies": {
+    "@zynkreatech/config": "workspace:*",
+    "tsup": "^8.0.0",
+    "typescript": "^5.5.0",
+    "@types/react": "^19.2.0",
+    "eslint": "^9.9.0",
+    "@eslint/js": "^9.9.0",
+    "typescript-eslint": "^8.0.0",
+    "nodemon": "^3.1.0"
+  }
+}

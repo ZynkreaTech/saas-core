@@ -13,7 +13,9 @@ export interface ModuleManifest {
   description?: string;
 }
 
-export interface ModuleRoute {
+export interface ModuleRoute<
+  P extends Record<string, unknown> = Record<string, unknown>,
+> {
   // Relative to the module's own URL segment. "" = the module's index page
   // (e.g. /billing), "[invoiceId]" = a nested dynamic segment
   // (e.g. /billing/123) — this is the mechanism that resolves the
@@ -25,7 +27,7 @@ export interface ModuleRoute {
   // to the actual component source, only a function that resolves it when
   // called, exactly like customModuleLoaders already works one level up
   // in ZynFlex's site.ts.
-  component: () => Promise<{ default: ComponentType<any> }>;
+  component: () => Promise<{ default: ComponentType<P> }>;
   exact?: boolean;
 }
 
@@ -96,7 +98,7 @@ export interface ModuleDefinitionInput extends ModuleLifecycleHooks {
    * boot() hook has registered a more specific route match. Keeps simple
    * modules (no sub-routes) usable without writing a boot() at all.
    */
-  component?: ComponentType<any>;
+  component?: ComponentType<Record<string, unknown>>;
 }
 
 export interface ModuleDefinition extends ModuleDefinitionInput {

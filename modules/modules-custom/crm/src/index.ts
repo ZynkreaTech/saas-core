@@ -1,9 +1,13 @@
 import { defineModule } from "@zynkreatech/sdk";
 import manifest from "../manifest.json";
 import { webRoutes } from "./routes/web";
-import { apiRoutes } from "./routes/api";
 import { sidebarMenus } from "./menus/sidebar";
 import { permissions } from "./permissions/permissions";
+
+// Re-exported (not consumed here) so the backend gateway layer can import
+// this module's API surface directly — the frontend ModuleRegistry only
+// ever gets webRoutes/menus/permissions via boot() below.
+export { apiRoutes } from "./routes/api";
 
 export default defineModule({
   // manifest.json stays the single source of truth for identity/version/

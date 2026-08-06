@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "radix-vega",
+  "rsc": true,
+  "tsx": true,
+  "tailwind": {
+    "config": "",
+    "css": "src/styles/globals.css",
+    "baseColor": "slate",
+    "cssVariables": true
+  },
+  "iconLibrary": "lucide",
+  "aliases": {
+    "components": "@zynkreatech/ui/components",
+    "utils": "@zynkreatech/ui/lib/utils",
+    "hooks": "@zynkreatech/ui/hooks",
+    "lib": "@zynkreatech/ui/lib",
+    "ui": "@zynkreatech/ui/components"
+  },
+  "rtl": false,
+  "menuColor": "default",
+  "menuAccent": "subtle"
+}

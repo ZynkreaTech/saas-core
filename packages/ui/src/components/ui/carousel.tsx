@@ -3,9 +3,9 @@ import useEmblaCarousel, {
   type UseEmblaCarouselType,
 } from "embla-carousel-react"
 
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
-import { CaretLeftIcon, CaretRightIcon } from "@phosphor-icons/react"
+import { cn } from "../../lib/utils";
+import { Button } from "./button";
+import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 
 type CarouselApi = UseEmblaCarouselType[1]
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>
@@ -183,20 +183,20 @@ function CarouselPrevious({
       variant={variant}
       size={size}
       className={cn(
-        "absolute touch-manipulation",
+        "absolute touch-manipulation rounded-full",
         orientation === "horizontal"
           ? "inset-y-0 -left-12 my-auto"
           : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
-        className
+        className,
       )}
       disabled={!canScrollPrev}
       onClick={scrollPrev}
       {...props}
     >
-      <CaretLeftIcon />
+      <ChevronLeftIcon />
       <span className="sr-only">Previous slide</span>
     </Button>
-  )
+  );
 }
 
 function CarouselNext({
@@ -213,20 +213,20 @@ function CarouselNext({
       variant={variant}
       size={size}
       className={cn(
-        "absolute touch-manipulation",
+        "absolute touch-manipulation rounded-full",
         orientation === "horizontal"
           ? "inset-y-0 -right-12 my-auto"
           : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
-        className
+        className,
       )}
       disabled={!canScrollNext}
       onClick={scrollNext}
       {...props}
     >
-      <CaretRightIcon />
+      <ChevronRightIcon />
       <span className="sr-only">Next slide</span>
     </Button>
-  )
+  );
 }
 
 export {

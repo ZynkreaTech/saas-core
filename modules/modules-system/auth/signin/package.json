@@ -1,0 +1,51 @@
+{
+  "name": "@zynkreatech/module-system-auth-signin",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "manifest.json"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./ui/LoginPage": {
+      "types": "./dist/ui/LoginPage.d.ts",
+      "import": "./dist/ui/LoginPage.mjs",
+      "require": "./dist/ui/LoginPage.js"
+    },
+    "./manifest.json": "./manifest.json"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "nodemon",
+    "lint": "eslint . --max-warnings 0",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "zod": "^3.23.0"
+  },
+  "peerDependencies": {
+    "@zynkreatech/core": "workspace:*",
+    "@zynkreatech/ui": "workspace:*",
+    "react": "19.2.8"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.9.0",
+    "@types/node": "^20.19.43",
+    "@types/react": "^19.2.0pnpm",
+    "@types/react-dom": "^19.2.0",
+    "@zynkreatech/ui": "workspace:*",
+    "eslint": "^9.9.0",
+    "glob": "^13.0.6",
+    "lucide-react": "^1.28.0",
+    "nodemon": "^3.1.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.5.0",
+    "typescript-eslint": "^8.0.0"
+  }
+}

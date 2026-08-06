@@ -7,6 +7,7 @@
     "node": ">=20"
   },
   "scripts": {
+    "create-module": "node ./scripts/create-module.mjs",
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
@@ -17,8 +18,11 @@
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.0",
+    "@clack/prompts": "^1.7.0",
     "@eslint/js": "^9.9.0",
+    "@types/node": "^20.19.43",
     "cross-env": "^10.1.0",
+    "fs-extra": "^11.4.0",
     "nodemon": "^3.1.14",
     "turbo": "^2.0.0",
     "typescript": "^5.5.0",

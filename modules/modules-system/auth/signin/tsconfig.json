@@ -1,0 +1,10 @@
+{
+  "extends": "../../../../packages/config/tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "outDir": "./dist",
+    "types": ["react", "node"],
+    "resolveJsonModule": true
+  },
+  "include": ["src", "manifest.json","tsup.config.ts"]
+}

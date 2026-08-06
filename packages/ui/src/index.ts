@@ -3,3 +3,4 @@
 export * from "./components";
 export * from "./hooks/use-mobile";
 export * from "./lib/utils";
+export * from "./providers/theme-provider";

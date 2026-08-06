@@ -1,0 +1,12 @@
+{
+  "technical_name": "signin",
+  "display_name": "Sign In",
+  "version": "1.0.0",
+  "author": "Zynkreatech",
+  "description": "Sign in module for authentication",
+  "entry": "./dist/index.js",
+  "icon": "users",
+  "category": "business",
+  "dependencies": ["organization", "users"],
+  "minimum_platform": "1.0.0"
+}

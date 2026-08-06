@@ -2,11 +2,13 @@
 # instead of downloading from the registry during local development.
 packages:
   - "packages/*"
-  - "modules/modules-system/*"
+  - "modules/modules-system/auth/*"
   - "modules/modules-custom/*"
   - "modules/modules-shared/*"
 allowBuilds:
   '@parcel/watcher': true
   '@swc/core': false
   esbuild: true
+  node: set this to true or false
   sharp: false
+  unrs-resolver: true

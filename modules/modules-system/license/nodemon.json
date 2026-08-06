@@ -1,7 +1,0 @@
-{
-  "watch": ["src"],
-  "ext": "ts,tsx",
-  "exec": "tsup",
-  "legacyWatch": true,
-  "delay": 300
-}
